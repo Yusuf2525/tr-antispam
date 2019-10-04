@@ -1,14 +1,14 @@
 {
   "name": "tr-antispam",
-  "version": "1.0.6",
-  "description": "A simple module based on Michale Scofield's module: discord-anti-spam.js! While containing the same features(quick and simple setup), it adds new things like setting up a report channel, timed mutes(removed ban option and added mute & unmute automatically) and many more features are coming on the way(probably adding that ban option back later...)!",
+  "version": "0.0.1",
+  "description": "",
   "main": "tr-antispam.js",
   "scripts": {
     "test": "echo \"No test specified\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MirageZoe/better-discord-antispam.git"
+    "url": "git+https://github.com/Yusuf2525/tr-antispam.git"
   },
   "keywords": [
     "better",
@@ -19,10 +19,10 @@
     "discord.js",
     "mute"
   ],
-  "author": "Mirage Zoe <asuna19yuuki@gmail.com>",
+  "author": "Yusuf Köşger <aronshire@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MirageZoe/better-discord-antispam/issues"
+    "url": "https://github.com/Yusuf2525/tr-antispam/issues"
   },
-  "homepage": "https://github.com/MirageZoe/better-discord-antispam#readme"
+  "homepage": https://github.com/Yusuf2525/tr-antispam#readme"
 }
