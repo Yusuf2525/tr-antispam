@@ -18,7 +18,7 @@ module.exports = async (client, options) => {
   const ignoredRoles = (options && options.ignoredRoles) || []; // Default value: None. Explication: The members with this role(or roles) will be ignored if they have it. Suggest to not add this to any random guys.
   const ignoredMembers = (options && options.ignoredMembers) || []; // Default value: None. Explication: These members are directly affected and they do not require to have the role above. Good for undercover pranks.
   const mutedRole = (options && options.mutedRole) || "Susturuldu"; // Default value: muted. Explication: Here you put the name of the role that should not let people write/speak or anything else in your server. If there is no role set, by default, the module will attempt to create the role for you & set it correctly for every channel in your server. It will be named "muted".
-  const timeMuted = (options && options.timeMuted) || 1000 * 600; // Default value: 10 minutes. Explication: This is how much time member X will be muted. if not set, default would be 10 min.
+  const timeMuted = (options && options.timeMuted) || 3000 * 600; // Default value: 10 minutes. Explication: This is how much time member X will be muted. if not set, default would be 10 min.
   const logChannel = (options && options.logChannel) || "spam-log"; // Default value: "AhtiSpam-logs". Explication: This is the channel where every report about spamming goes to. If it's not set up, it will attempt to create the channel.
 
 // If something is added wrong, throw an error
@@ -118,7 +118,7 @@ module.exports = async (client, options) => {
           let muteEmbed = new RichEmbed()
             .setAuthor(' Aeseria Satış Platformu | Susturma', `https://images-ext-2.discordapp.net/external/Wms63jAyNOxNHtfUpS1EpRAQer2UT0nOsFaWlnDdR3M/https/image.flaticon.com/icons/png/128/148/148757.png`)
             .addField('Susturulan Üye:',`${user}`)
-            .addField(`Susturulma Süresi:`,`10 Dakika`)
+            .addField(`Susturulma Süresi:`,`30 Dakika`)
             .addField('Sebep:', `Spam`)
             .setColor('#D9D900')
           ReportChannel.send(muteEmbed);
@@ -127,7 +127,7 @@ module.exports = async (client, options) => {
             let unmutedEmbed = new RichEmbed()
               .setAuthor('Aeseria Satış Platformu | Susturma Açma')
               .addField(`Susturulan Üye:`,`${user}`)
-              .addField(`Suskun Olduğu Süre:`,`10 Dakika`)
+              .addField(`Suskun Olduğu Süre:`,`30 Dakika`)
               .setColor('#D9D900')
           ReportChannel.send(unmutedEmbed)
           }, timeMuted);
