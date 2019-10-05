@@ -11,7 +11,7 @@ module.exports = async (client, options) => {
   const limitUntilWarn = (options && options.limitUntilWarn) || 3; // Default value: 3. Explication: This is the limit where you get the warn message. If the member X sent over 3 messages within the interval, he get warned
   const limitUntilMuted = (options && options.limitUntilMuted) || 5; // Default value: 5. Explication: This is the limit where you get Punished. If the member X sent over 5 messages within the interval, he get muted.
   const interval = (options && options.interval) || 2000; //Default Time: 2000MS (1000 milliseconds = 1 second, 2000 milliseconds = 2 seconds etc...). Explication: The interval where the messages are sent. Practically if member X sent 5+ messages within 2 seconds, he get muted
-  const warningMessage = (options && options.warningMessage) || "Spam yapma yoksa sustururum!"; // Default Message: if you don't stop from spamming, I'm going to punish you!. Explication: None, it's just a message you get for the warning phase.
+  const warningMessage = (options && options.warningMessage) || "Çok hızlı mesaj gönderiyorsun. Biraz yavaşla aksi takdirde susturma cezası uygulayacağım!"; // Default Message: if you don't stop from spamming, I'm going to punish you!. Explication: None, it's just a message you get for the warning phase.
   const muteMessage = (options && options.muteMessage) || "Spam yaptığın için susturuldun!"; // Default Message: "was muted since we don't like too much advertisement type people!". Explication: The message sent after member X was punished
   const maxDuplicatesWarning = (options && options.maxDuplicatesWarning || 7); // Default value: 7. Explication: When people are spamming the same message, <limitUntilWarn> is ignored and this will trigger when member X sent over 7+ message that are the same.
   const maxDuplicatesMute = (options && options. maxDuplicatesMute || 10); // Deafult value: 10 Explication: The limit where member X get muted after sending too many messages(10+).
@@ -119,7 +119,7 @@ module.exports = async (client, options) => {
             .setAuthor(' Aeseria Satış Platformu | Susturma', `https://images-ext-2.discordapp.net/external/Wms63jAyNOxNHtfUpS1EpRAQer2UT0nOsFaWlnDdR3M/https/image.flaticon.com/icons/png/128/148/148757.png`)
             .addField('Susturulan Üye:',`${user}`)
             .addField(`Susturulma Süresi:`,`10 Dakika`)
-            .addField('Sebep ', `Spam`)
+            .addField('Sebep:', `Spam`)
             .setColor('#D9D900')
           ReportChannel.send(muteEmbed);
           setTimeout(()=>{
