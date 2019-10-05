@@ -96,7 +96,7 @@ module.exports = async (client, options) => {
       if (!role) {
         try {
             role = await m.guild.createRole({
-                name: "muted",
+                name: "Susturulmuş",
                 color: "#000000",
                 permissions: []
             })
