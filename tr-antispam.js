@@ -137,7 +137,7 @@ module.exports = async (client, options) => {
           }, timeMuted);
           return true;
        }).catch((e) => {
-          m.guild.owner.send(`Uyarı: <@!${message.author.id}>! spam yapıyor ama ben susturamıyorum. Hemen yetki ver yada sen hallet.`);
+         ReportChannel.send(`Uyarı: <@!${message.author.id}>! spam yapıyor ama ben susturamıyorum. Hemen yetki ver yada sen hallet.`);
           return false;
       });
     }//end of user
