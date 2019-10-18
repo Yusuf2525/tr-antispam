@@ -20,6 +20,7 @@ module.exports = async (client, options) => {
   const mutedRole = (options && options.mutedRole) || "Susturuldu"; // Default value: muted. Explication: Here you put the name of the role that should not let people write/speak or anything else in your server. If there is no role set, by default, the module will attempt to create the role for you & set it correctly for every channel in your server. It will be named "muted".
   const timeMuted = (options && options.timeMuted) || 3000 * 600; // Default value: 10 minutes. Explication: This is how much time member X will be muted. if not set, default would be 10 min.
   const logChannel = (options && options.logChannel) || "spam-log"; // Default value: "AhtiSpam-logs". Explication: This is the channel where every report about spamming goes to. If it's not set up, it will attempt to create the channel.
+  const isim = (options && options.isim) || "Aronshire Satış Platformu"; // Default value: "AhtiSpam-logs". Explication: This is the channel where every report about spamming goes to. If it's not set up, it will attempt to create the channel.
 
 // If something is added wrong, throw an error
 
@@ -116,7 +117,7 @@ module.exports = async (client, options) => {
         user.addRole(role).then(()=>{
           m.channel.send(`<@!${m.author.id}>, ${muteMsg}`);
           let muteEmbed = new RichEmbed()
-            .setAuthor(' Aeseria Satış Platformu | Susturma', `https://images-ext-2.discordapp.net/external/Wms63jAyNOxNHtfUpS1EpRAQer2UT0nOsFaWlnDdR3M/https/image.flaticon.com/icons/png/128/148/148757.png`)
+            .setAuthor(`${isim} | Susturma`, `https://images-ext-2.discordapp.net/external/Wms63jAyNOxNHtfUpS1EpRAQer2UT0nOsFaWlnDdR3M/https/image.flaticon.com/icons/png/128/148/148757.png`)
             .addField('Susturulan Üye:',`${user}`)
             .addField(`Susturulma Süresi:`,`30 Dakika`)
             .addField('Sebep:', `Spam`)
@@ -125,7 +126,7 @@ module.exports = async (client, options) => {
           setTimeout(()=>{
             user.removeRole(role);
             let unmutedEmbed = new RichEmbed()
-              .setAuthor('Aeseria Satış Platformu | Susturma Açma')
+              .setAuthor(`${isim} | Susturma Açma`)
               .addField(`Susturulan Üye:`,`${user}`)
               .addField(`Suskun Olduğu Süre:`,`30 Dakika`)
               .setColor('#D9D900')
